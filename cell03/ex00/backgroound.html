@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type='text/css' href="backgroound.css">
+    </head>
+
+    <body>
+    <button onclick="func1()">Try it</button>
+
+    <script>
+        function func1() {
+            // random color of background on click
+            var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+    </body>
+</html>

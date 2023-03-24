@@ -1,0 +1,23 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+td{
+    text-align: left;
+    vertical-align: middle;
+}
+
+table{
+    table-layout: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-aqua{
+    background-color: rgb(66, 245, 245);
+}
+
+.bg-green{
+    background-color: rgb(110, 229, 13);
+}

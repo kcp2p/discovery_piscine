@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+  }
+  
+  main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+  }
+  
+  section {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .no-parallax {
+    align-items: end;
+    background-color: #111;
+    z-index: 999;
+  }
+  
+  section h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: sans-serif;
+  }
+  
+  .parallax h1 {
+    width: 60%;
+    font-size: 2rem;
+  }
+  
+  .parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+  }
+  
+  .bg::after {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://cntsyncont.images.worldnow.com/images/21676459_G.jpg");
+    background-size: cover;
+  }
+  
+  .bg-2::after {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://imgb.srgcdn.com/9h1Z9jT4AGRz7tHsmhP9.jpg");
+    background-size: cover;
+  }
+  
+
+  @media screen and (min-width: 768px) {
+    section h1 {
+      font-size: 10px;
+    }
+    .parallax h1 {
+      font-size: 10px;
+    }
+  }

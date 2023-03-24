@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="circle" class="circleClass" onclick="increase()" onmouseleave="decrease()"></div>
+    </body>
+
+    <script>
+        function increase() {
+            const width = document.getElementById("circle").offsetWidth
+            const height = document.getElementById("circle").offsetHeight
+
+            colorSwitch();
+
+            if (width < 420 && height < 420) {
+                circle.style.height = width + 10 + "px";
+                circle.style.width = height + 10 + "px";
+            } else {
+                circle.style.height = 200 + "px";
+                circle.style.width = 200 + "px";
+                circle.style.backgroundColor = "red";
+            }
+
+        }
+
+        function decrease() {
+            const width = document.getElementById("circle").offsetWidth
+            const height = document.getElementById("circle").offsetHeight
+
+            if (width > 200 && height > 200) {
+                circle.style.height = width - 5 + "px";
+                circle.style.width = height - 5 + "px";
+                colorSwitch();
+            }
+
+        }
+
+        function colorSwitch() {
+            const color = document.getElementById("circle").style.backgroundColor;
+
+            if (color == "red" || color == "") {
+                circle.style.backgroundColor = "green";
+            } else if (color == "green") {
+                circle.style.backgroundColor = "blue";
+            } else if (color == "blue") {
+                circle.style.backgroundColor = "red";
+            }
+        }
+    </script>
+
+    <style>
+        .circleClass {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type='text/css' href="backgroound.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Init div and css of respective class and id
+                jQuery('<button>', {
+                    id: "btn1",
+                    text: "Try it"
+                }).appendTo("body");
+
+                $("#btn1").click(function(){
+                    const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+                    $("body").css("background-color", color);
+                });
+            });
+        </script>
+    </head>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Init div and css of respective class and id
+                jQuery("<div>", {
+                    id: "circle",
+                    class: "circleClass"
+                }).appendTo("body");
+
+                $(".circleClass").css({
+                    "height": 200 + "px",
+                    "width": 200 + "px",
+                    "background-color": "rgb(255, 0, 0)",
+                    "border-radius": "50%",
+                    "display": "inline-block"
+                });
+
+                // onClick event
+                $("#circle").click(function(){
+                    const width = $("#circle").width();
+                    const height = $("#circle").height();
+
+                    colorSwitch();
+
+                    if (width < 420 && height < 420) {
+                        $("#circle").css({
+                            "height": width + 10 + "px",
+                            "width": height + 10 + "px"
+                        });
+                    } else {
+                        $("#circle").css({
+                            "height": 200 + "px",
+                            "width": 200 + "px",
+                            "background-color": "rgb(255, 0, 0)"
+                        });
+                    }
+
+                });
+
+                // onMouseLeave event
+                $("#circle").mouseleave(function(){
+                    const width = $("#circle").width();
+                    const height = $("#circle").height();
+    
+                    if (width > 200 && height > 200) {
+                        $("#circle").css({
+                            "height": height - 5 + "px",
+                            "width":  width - 5 + "px"
+                        })
+                        colorSwitch();
+                    }
+                });
+            });
+
+            // Function to change color of circle
+            function colorSwitch() {
+                const color = $("#circle").css("background-color");
+                if (color == "rgb(255, 0, 0)" || color == "") {
+                    $("#circle").css("background-color", "rgb(0, 255, 0)");
+                } else if (color == "rgb(0, 255, 0)") {
+                    $("#circle").css("background-color", "rgb(0, 0, 255)");
+                } else if (color == "rgb(0, 0, 255)") {
+                    $("#circle").css("background-color", "rgb(255, 0, 0)");
+                }
+            }
+        </script>
+    </head>
+</html>
