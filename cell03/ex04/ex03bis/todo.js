@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     function getCookie(cname) {
         let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
+        let decodedCookie = document.cookie;
         let ca = decodedCookie.split(';');
         for(let i = 0; i <ca.length; i++) {
           let c = ca[i];
@@ -39,6 +39,7 @@ $(document).ready(function(){
 
     function addTodo(){
         let todo = prompt("Please enter your todo:");
+        todo = encodeURIComponent(todo)
         if(todo){
             let todos = getCookie("todos");
             if(todos){
@@ -58,7 +59,7 @@ $(document).ready(function(){
             jQuery("#ft_list").empty();
             for(let i = todos.length-1; i >= 0; i--){
                 jQuery("<li>", {
-                    text: todos[i],
+                    text: decodeURIComponent(todos[i]),
                     click: function(){
                         clearTodo(i);
                     }

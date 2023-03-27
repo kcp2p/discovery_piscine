@@ -7,7 +7,7 @@ function setCookie(cname, cvalue, exdays) {
 
 function getCookie(cname) {
     let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
+    let decodedCookie = document.cookie;
     let ca = decodedCookie.split(';');
     for(let i = 0; i <ca.length; i++) {
       let c = ca[i];
@@ -24,6 +24,7 @@ function getCookie(cname) {
 function addTodo(){
     let todo = prompt("Please enter your todo:");
     if(todo){
+        todo = encodeURIComponent(todo)
         let todos = getCookie("todos");
         if(todos){
             todos += "," + todo;
@@ -41,7 +42,7 @@ function showTodos(){
         todos = todos.split(",");
         let html = "";
         for(let i = todos.length-1; i >= 0; i--){
-            html += `<li onclick="clearTodo(${i})">${todos[i]}</li>`;
+            html += `<li onclick="clearTodo(${i})">${decodeURIComponent(todos[i])}</li>`;
         }
         document.getElementById("ft_list").innerHTML = html;
     }
