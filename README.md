@@ -1,12 +1,16 @@
-Literally my first attempt at writing front-end and javascript
+# Discovery Piscine at 42Bangkok
 
-I learned
+This repository contains my solutions to the exercises and projects I completed during the Discovery Piscine at 42Bangkok.
 
-1. HTML
-2. CSS
-3. JavaScript
+For the final project, the rush portfolio, please check it out [here!](https://github.com/kcp2p/discovery_piscine-rush)
 
-and how to make use of them together to produce a website.
+## What I learned
 
+- HTML
+- CSS
+- JavaScript
 
-10/10 Mr. Wave very good tutor.
+I learned how to use these programming languages altogether to build a website.
+
+I have to give a special shoutout to Mr. Wave for tutoring me (even though he wasn't assigned to tutor my group), he gave me several ideas of edge-test cases.
+

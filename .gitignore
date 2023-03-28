@@ -93,6 +93,3 @@ Thumbs.db
 !.gitignore
 !.nvmrc
 !.phpcs.xml.dist
-
-# Ignore rush (sub module)
-rush
