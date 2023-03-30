@@ -1,0 +1,4 @@
+[submodule "rush"]
+	path = rush
+	url = https://github.com/kcp2p/discovery_piscine-rush
+	branch = main
